@@ -16,6 +16,7 @@ import {
   NgxPopoverCardComponent, NgxPopoverFormComponent,
   NgxPopoverTabsComponent,
 } from './popovers/popover-examples.component';
+import { IssueDetailsComponent } from './issue-details/issue-details.component';
 
 const components = [
   UiFeaturesComponent,
@@ -42,6 +43,7 @@ const components = [
   ],
   declarations: [
     ...components,
+    IssueDetailsComponent,
   ],
   entryComponents: [
     ModalComponent,

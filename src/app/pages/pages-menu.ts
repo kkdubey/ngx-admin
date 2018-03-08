@@ -51,6 +51,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title: 'Issue Tracker',
+    icon: 'nb-grid-b-outline',
+    link: '/pages/ui-features',
+  },
+  {
     title: 'Forms',
     icon: 'nb-compose',
     children: [
