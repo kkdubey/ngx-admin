@@ -14,6 +14,6 @@ import { ISSUE_ITEMS } from './issue-items';
   `,
 })
 export class UiFeaturesComponent {
-  
+
   menu = ISSUE_ITEMS;
 }

@@ -2,7 +2,6 @@ import { Component, OnDestroy } from '@angular/core';
 import {
   NbMediaBreakpoint,
   NbMediaBreakpointsService,
-  NbMenuItem,
   NbMenuService,
   NbSidebarService,
   NbThemeService,
@@ -14,17 +13,6 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/withLatestFrom';
 import 'rxjs/add/operator/delay';
 
-// TODO: move layouts into the framework
-// <nb-sidebar class="menu-sidebar"
-//                    tag="menu-sidebar"
-//                    [right]="sidebar.id === 'right'">
-//         <nb-sidebar-header>
-//           <a href="#" class="btn btn-hero-success main-btn">
-//             <i class="ion ion-social-github"></i> <span>Support Us</span>
-//           </a>
-//         </nb-sidebar-header>
-//         <ng-content select="nb-menu"></ng-content>
-//       </nb-sidebar>
 @Component({
   selector: 'ngx-sample-layout',
   styleUrls: ['./sample.layout.scss'],
