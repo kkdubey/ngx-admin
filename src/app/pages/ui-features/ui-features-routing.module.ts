@@ -10,13 +10,14 @@ import { TypographyComponent } from './typography/typography.component';
 import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
 import { SearchComponent } from './search-fields/search-fields.component';
 import { PopoversComponent } from './popovers/popovers.component';
+import { IssueDetailsComponent } from './issue-details/issue-details.component';
 
 const routes: Routes = [{
   path: '',
   component: UiFeaturesComponent,
   children: [{
-    path: 'buttons',
-    component: ButtonsComponent,
+    path: ':issueId/issue-details',
+    component: IssueDetailsComponent,
   }, {
     path: 'grid',
     component: GridComponent,
@@ -26,12 +27,6 @@ const routes: Routes = [{
   }, {
     path: 'modals',
     component: ModalsComponent,
-  }, {
-    path: 'popovers',
-    component: PopoversComponent,
-  }, {
-    path: 'typography',
-    component: TypographyComponent,
   }, {
     path: 'search-fields',
     component: SearchComponent,

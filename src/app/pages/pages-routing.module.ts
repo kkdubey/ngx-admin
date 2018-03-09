@@ -11,7 +11,7 @@ const routes: Routes = [{
     path: 'dashboard',
     component: DashboardComponent,
   }, {
-    path: 'ui-features',
+    path: 'issue-tracker',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
     path: 'components',

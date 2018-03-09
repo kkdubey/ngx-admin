@@ -17,6 +17,10 @@ import {
   NgxPopoverTabsComponent,
 } from './popovers/popover-examples.component';
 import { IssueDetailsComponent } from './issue-details/issue-details.component';
+import { IssueInfoComponent } from './issue-details/issue-info/issue-info.component';
+import { RecentIssueComponent } from './issue-details/recent-issue/recent-issue.component';
+import { FrequentIssueComponent } from './issue-details/frequent-issue/frequent-issue.component';
+import { IssueProbabilityComponent } from './issue-details/issue-probability/issue-probability.component';
 
 const components = [
   UiFeaturesComponent,
@@ -44,6 +48,10 @@ const components = [
   declarations: [
     ...components,
     IssueDetailsComponent,
+    IssueInfoComponent,
+    RecentIssueComponent,
+    FrequentIssueComponent,
+    IssueProbabilityComponent,
   ],
   entryComponents: [
     ModalComponent,

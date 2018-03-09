@@ -2,41 +2,41 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const ISSUE_ITEMS: NbMenuItem[] = [
   {
-    title: 'Issue Tracker',
+    title: 'Issue List',
     group: true,
   },
   {
-    title: 'Buttons',
-    link: '/pages/ui-features/buttons',
+    title: 'issue1',
+    link: '/pages/issue-tracker/issue1/issue-details',
     icon: 'nb-keypad',
   },
   {
     title: 'Grid',
-    link: '/pages/ui-features/grid',
+    link: '/pages/issue-tracker/grid',
     icon: 'nb-lightbulb',
   },
   {
     title: 'Icons',
-    link: '/pages/ui-features/icons',
+    link: '/pages/issue-tracker/icons',
   },
   {
     title: 'Modals',
-    link: '/pages/ui-features/modals',
+    link: '/pages/issue-tracker/modals',
   },
   {
     title: 'Popovers',
-    link: '/pages/ui-features/popovers',
+    link: '/pages/issue-tracker/popovers',
   },
   {
     title: 'Typography',
-    link: '/pages/ui-features/typography',
+    link: '/pages/issue-tracker/typography',
   },
   {
     title: 'Animated Searches',
-    link: '/pages/ui-features/search-fields',
+    link: '/pages/issue-tracker/search-fields',
   },
   {
     title: 'Tabs',
-    link: '/pages/ui-features/tabs',
+    link: '/pages/issue-tracker/tabs',
   },
 ];

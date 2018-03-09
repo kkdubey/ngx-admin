@@ -5,12 +5,13 @@ import { ISSUE_ITEMS } from './issue-items';
   selector: 'ngx-ui-features',
   template: `
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2 col-xs-2">
       <nb-menu [items]="menu"></nb-menu>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10 col-xs-10">
       <router-outlet></router-outlet>
     </div>
+  </div>
   `,
 })
 export class UiFeaturesComponent {
