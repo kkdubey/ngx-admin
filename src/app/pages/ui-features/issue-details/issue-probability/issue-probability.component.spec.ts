@@ -8,7 +8,7 @@ describe('IssueProbabilityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IssueProbabilityComponent ]
+      declarations: [ IssueProbabilityComponent ],
     })
     .compileComponents();
   }));

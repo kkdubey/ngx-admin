@@ -2,14 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { UiFeaturesComponent } from './ui-features.component';
-import { ButtonsComponent } from './buttons/buttons.component';
 import { GridComponent } from './grid/grid.component';
 import { IconsComponent } from './icons/icons.component';
 import { ModalsComponent } from './modals/modals.component';
-import { TypographyComponent } from './typography/typography.component';
 import { TabsComponent, Tab1Component, Tab2Component } from './tabs/tabs.component';
 import { SearchComponent } from './search-fields/search-fields.component';
-import { PopoversComponent } from './popovers/popovers.component';
 import { IssueDetailsComponent } from './issue-details/issue-details.component';
 
 const routes: Routes = [{

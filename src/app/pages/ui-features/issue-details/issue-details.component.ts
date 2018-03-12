@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router'
+// import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'ngx-issue-details',
@@ -9,14 +9,16 @@ import { ActivatedRoute, Router } from '@angular/router'
 export class IssueDetailsComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router) { }
+    // private route: ActivatedRoute,
+    // private router: Router
+  ) { }
 
   ngOnInit() {
-    const issueId =  this.route.snapshot.params['issueId'];
-    console.log(issueId);
-    console.log(this.router);
-    console.log(this.route);
+    // const issueId =  this.route.snapshot.params['issueId'];
+    // this.newMethod(issueId);
+    // console.log(issueId);
+    // console.log(this.router);
+    // console.log(this.route);
   }
 
 }
