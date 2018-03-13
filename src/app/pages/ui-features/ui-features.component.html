@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-2 col-xs-2">
+    <!-- <nb-menu [items]="menus" (click)="openTab($event)"></nb-menu> -->
+    <nb-card>
+      <div class="issue-div" style="text-align: center;">
+        <span>Issue Tracker</span>
+      </div>
+      <div *ngFor="let menu of menus" class="issue-div" (click)="openTab(menu)">
+        <i class="menu-icon nb-keypad"></i>
+        <span>{{menu.title}}</span>
+      </div>
+    </nb-card>
+  </div>
+  <div class="col-md-10 col-xs-10">
+    <nb-card>
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="{{tab.title}}" *ngFor="let tab of tabData">
+          <ngx-issue-details></ngx-issue-details>
+        </nb-tab>
+      </nb-tabset>
+    </nb-card>
+  </div>
+</div>

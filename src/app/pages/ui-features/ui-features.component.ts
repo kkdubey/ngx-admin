@@ -1,20 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ISSUE_ITEMS } from './issue-items';
 @Component({
   selector: 'ngx-ui-features',
-  template: `
-  <div class="row">
-    <div class="col-md-2 col-xs-2">
-      <nb-menu [items]="menu"></nb-menu>
-    </div>
-    <div class="col-md-10 col-xs-10">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-  `,
+  styleUrls: ['./ui-features.component.scss'],
+  templateUrl: './ui-features.component.html',
 })
-export class UiFeaturesComponent {
+export class UiFeaturesComponent implements OnInit {
 
-  menu = ISSUE_ITEMS;
+  menus = ISSUE_ITEMS;
+  tabData = [];
+
+  constructor() { }
+
+  ngOnInit() {
+    // this.tabData.push({
+    //   tabTitle: 'Simple Tab #1',
+    // });
+    // this.tabData.push({
+    //   tabTitle: 'Simple Tab #2',
+    // });
+    // this.tabData.push({
+    //   tabTitle: 'Simple Tab #3',
+    // });
+  }
+  openTab(tab) {
+    this.tabData.push(tab);
+  }
 }
