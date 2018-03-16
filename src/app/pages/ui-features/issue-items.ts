@@ -1,42 +1,40 @@
 import { NbMenuItem } from '@nebular/theme';
 
-export const ISSUE_ITEMS: NbMenuItem[] = [
+export const ISSUE_ITEMS: any[] = [
   {
-    title: 'Issue List',
-    group: true,
-  },
-  {
-    title: 'issue1',
-    link: '/pages/issue-tracker/issue1/issue-details',
-    icon: 'nb-keypad',
-  },
-  {
-    title: 'Grid',
-    link: '/pages/issue-tracker/grid',
-    icon: 'nb-lightbulb',
-  },
-  {
-    title: 'Icons',
-    link: '/pages/issue-tracker/icons',
-  },
-  {
-    title: 'Modals',
-    link: '/pages/issue-tracker/modals',
-  },
-  {
-    title: 'Popovers',
-    link: '/pages/issue-tracker/popovers',
-  },
-  {
-    title: 'Typography',
-    link: '/pages/issue-tracker/typography',
-  },
-  {
-    title: 'Animated Searches',
-    link: '/pages/issue-tracker/search-fields',
-  },
-  {
-    title: 'Tabs',
-    link: '/pages/issue-tracker/tabs',
-  },
+    "index": 0,
+    "assignee": "pchemp",
+    "component": "Arena",
+    "description": "SFTP job failed",
+    "issue_type": "Issue",
+    "label_1": "EU",
+    "label_2": "FR",
+    "original_estimate": 900,
+    "priority": "P3 - Major",
+    "project_key": "HSBCPS",
+    "project_name": "HSBCPRDSUP",
+    "remaining_estimate": 0,
+    "status": "Open",
+    "summary": "jobarenafr16",
+    "business_impact": "2 - Medium",
+    "CreationDate": 1521193943344
+  }, {
+    "index": 1,
+    "assignee": "pchemp",
+    "component": "Arena",
+    "description": "Reinitializing broker to ABCDEF. Relanuch the job", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 1800, "priority": "P2 - Critical", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr16", "business_impact": "4 - High", "CreationDate": 1521193883344
+  }, {
+    "index": 2, "assignee": "praja3",
+    "component": "Arena", "description": "due to holiday job was failed",
+    "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 3600, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr3", "business_impact": "3 - Medium-high", "CreationDate": 1521193823344
+  }, {
+    "index": 3, "assignee": "praja3", "component": "Arena",
+    "description": "Relaunch failed Cluster job", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 7200, "priority": "P2 - Critical", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr8", "business_impact": "4 - High", "CreationDate": 1521193763344
+  }, {
+    "index": 4, "assignee": "deshuk", "component": "Arena",
+    "description": "reran the failed AB job", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 900, "priority": "P2 - Critical", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr8", "business_impact": "3 - Medium-high", "CreationDate": 1521193703344
+  }, {
+    "index": 5, "assignee": "deshuk", "component": "Arena",
+    "description": "Wait check failed due to long running task on Cluster. Completed fine at the end", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 7200, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr8", "business_impact": "3 - Medium-high", "CreationDate": 1521193643344
+  }, { "index": 6, "assignee": "praja3", "component": "Arena", "description": "relaunch xyz on BOND and reran cron job", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 3600, "priority": "P2 - Critical", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr3", "business_impact": "4 - High", "CreationDate": 1521193583344 }, { "index": 7, "assignee": "praja3", "component": "Arena", "description": "failed for filter 1. it has been skipped and remaining multistart command executed with sos script. Job finished at the end", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 7200, "priority": "P2 - Critical", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr16", "business_impact": "4 - High", "CreationDate": 1521193523344 }, { "index": 8, "assignee": "pchemp", "component": "Arena", "description": "File SFTP later and job finished fine", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 1800, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr3", "business_impact": "2 - Medium", "CreationDate": 1521193463344 }, { "index": 9, "assignee": "pchemp", "component": "Arena", "description": "Wait check failed due to long running task on Cluster. Completed fine at the end", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 7200, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr3", "business_impact": "3 - Medium-high", "CreationDate": 1521193403344 }, { "index": 10, "assignee": "pchemp", "component": "Arena", "description": "1 task failed on AB", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 1800, "priority": "P2 - Critical", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr1", "business_impact": "3 - Medium-high", "CreationDate": 1521193343344 }, { "index": 11, "assignee": "pchemp", "component": "Arena", "description": "need to run failed driver again. Updated driver status to Success and then reran the failed job again. Completed succesfully.", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 900, "priority": "P2 - Critical", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr3", "business_impact": "3 - Medium-high", "CreationDate": 1521193283344 }, { "index": 12, "assignee": "pchemp", "component": "Arena", "description": "relaunched failed filtersplit on Cluster", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 1800, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr3", "business_impact": "3 - Medium-high", "CreationDate": 1521193223344 }, { "index": 13, "assignee": "deshuk", "component": "Arena", "description": "There was early closing because of which timestamp was before normal, therefore forced the controls", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 900, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr2", "business_impact": "3 - Medium-high", "CreationDate": 1521193163344 }, { "index": 14, "assignee": "praja3", "component": "Arena", "description": "File SFTP later and job finished fine", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 1800, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr2", "business_impact": "2 - Medium", "CreationDate": 1521193103344 }, { "index": 15, "assignee": "deshuk", "component": "Arena", "description": "Wait check failed", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 3600, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr3", "business_impact": "3 - Medium-high", "CreationDate": 1521193043344 }, { "index": 16, "assignee": "pchemp", "component": "Arena", "description": "Dependent job failed. Relaunched Copy curve then job succeeded.", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 1800, "priority": "P2 - Critical", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr16", "business_impact": "4 - High", "CreationDate": 1521192983344 }, { "index": 17, "assignee": "praja3", "component": "Arena", "description": "failed after xyz 123 release", "issue_type": "Issue", "label_1": "EU", "label_2": "FR", "original_estimate": 3600, "priority": "P3 - Major", "project_key": "HSBCPS", "project_name": "HSBCPRDSUP", "remaining_estimate": 0, "status": "Open", "summary": "jobarenafr2", "business_impact": "3 - Medium-high", "CreationDate": 1521192923344 }
 ];
