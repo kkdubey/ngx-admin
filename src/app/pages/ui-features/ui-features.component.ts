@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { ISSUE_ITEMS } from './issue-items';
 @Component({
@@ -11,20 +11,25 @@ export class UiFeaturesComponent implements OnInit {
   menus = ISSUE_ITEMS;
   tabData = [];
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit() {
-    // this.tabData.push({
-    //   tabTitle: 'Simple Tab #1',
-    // });
-    // this.tabData.push({
-    //   tabTitle: 'Simple Tab #2',
-    // });
-    // this.tabData.push({
-    //   tabTitle: 'Simple Tab #3',
-    // });
   }
   openTab(tab) {
-    this.tabData.push(tab);
+    const index = this.tabData.findIndex(function (e) { return e.index == tab.index; });
+    if (index == -1) {
+      this.tabData.push(tab);
+    }
+    setTimeout(() => {
+      let elem = document.getElementById(tab.issue_type + '-' + tab.index);
+      elem.click();
+    }, 500);
+  }
+  closeTab(tab) {
+    const index = this.tabData.findIndex(function (e) { return e.index == tab.index; });
+    if (index > -1) {
+      this.tabData.splice(index, 1);
+    }
+    return false;
   }
 }

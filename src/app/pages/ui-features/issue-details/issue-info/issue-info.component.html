@@ -1,78 +1,118 @@
-
 <nb-card>
   <nb-card-header>
-      Issue Info
+    Issue Info
   </nb-card-header>
   <nb-card-body>
     <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <div class="form-group">
-            <label class="form-control-label">Place to show toast:</label>
-            <div class="dropdown" ngbDropdown>
-              <button class="btn btn-primary" type="button" ngbDropdownToggle>
-                Test
-              </button>
-              <ul ngbDropdownMenu class="dropdown-menu">
-                <li class="dropdown-item">
-                  Test1
-                </li>
-                <li class="dropdown-item">
-                  test2
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-control-label">Animation type:</label>
-            <div class="dropdown" ngbDropdown>
-              <button class="btn btn-primary" type="button" ngbDropdownToggle>
-                Animation Type Test
-              </button>
-              <ul ngbDropdownMenu class="dropdown-menu">
-                <li class="dropdown-item" >
-                  ddl1
-                </li>
-                <li class="dropdown-item" >
-                  ddl2
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-control-label">Title:</label>
-            <input class="form-control" [(ngModel)]="title" name="title">
-          </div>
-          <form>
-            <div class="form-group">
-              <label class="form-control-label">Content:</label>
-              <input class="form-control" [(ngModel)]="content" name="content">
-            </div>
-          </form>
-        </div>
-  
-        <div class="col-md-6 col-sm-12">
-          <div class="form-group">
-            <label class="form-control-label">Limit number of toasts:</label>
-            <input class="form-control" type="number" [(ngModel)]="toastsLimit" name="limit">
-          </div>
-          <div class="form-group">
-            <label class="form-control-label">Toast type:</label>
-            <div class="dropdown" ngbDropdown>
-              <button class="btn btn-primary" type="button" ngbDropdownToggle>
-                {{ type }}
-              </button>
-              <ul ngbDropdownMenu class="dropdown-menu">
-                  <li class="dropdown-item" >test1</li>
-                  <li class="dropdown-item" >test2</li>
-              </ul>
-            </div>
-          </div>
-  
-          <div><nb-checkbox [(ngModel)]="isNewestOnTop">Newest on top</nb-checkbox></div>
-          <div><nb-checkbox [(ngModel)]="isHideOnClick">Hide on click</nb-checkbox></div>
-          <div><nb-checkbox [(ngModel)]="isDuplicatesPrevented">Prevent arising of duplicate toast</nb-checkbox></div>
-          <div><nb-checkbox [(ngModel)]="isCloseButton">Close button</nb-checkbox></div>
-        </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Type:
+          </nb-card-header>
+          <nb-card-body>{{issue_details.type}}
+          </nb-card-body>
+        </nb-card>
       </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Id:
+          </nb-card-header>
+          <nb-card-body>{{id}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Job Name
+          </nb-card-header>
+          <nb-card-body>{{jobName}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Application
+          </nb-card-header>
+          <nb-card-body>{{ issue_details.component }}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Business impact:
+          </nb-card-header>
+          <nb-card-body>{{impact}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Priority:
+          </nb-card-header>
+          <nb-card-body>{{priority}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Created by:
+          </nb-card-header>
+          <nb-card-body> {{createdBy}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Creation Date:
+          </nb-card-header>
+          <nb-card-body> {{creationDate.getDate()}}/{{creationDate.getMonth()}}/{{creationDate.getYear()}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Effort:
+          </nb-card-header>
+          <nb-card-body> {{effort}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Region:
+          </nb-card-header>
+          <nb-card-body> {{region}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Location affected:
+          </nb-card-header>
+          <nb-card-body> {{locationAffected}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Description:
+          </nb-card-header>
+          <nb-card-body> {{resolutionCommentary}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+
   </nb-card-body>
 </nb-card>

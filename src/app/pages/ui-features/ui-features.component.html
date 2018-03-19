@@ -15,14 +15,22 @@
   </div>
   <div class="col-md-10 col-xs-10">
     <nb-card>
-      <nb-tabset fullWidth>
-        <nb-tab tabTitle="Dashboard">
-          <ngx-ticket-dashboard></ngx-ticket-dashboard>
-        </nb-tab>
-        <nb-tab tabTitle="{{tab.issue_type}}-{{tab.index}}" *ngFor="let tab of tabData">
-          <ngx-issue-details></ngx-issue-details>
-        </nb-tab>
-      </nb-tabset>
+      <ngb-tabset>
+        <ngb-tab title="Dashboard">
+          <ng-template ngbTabContent>
+            <ngx-ticket-dashboard></ngx-ticket-dashboard>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab *ngFor="let tab of tabData">
+          <ng-template ngbTabTitle>
+            <b id="{{tab.issue_type}}-{{tab.index}}">{{tab.issue_type}}-{{tab.index}}</b>
+            <i class="nb-close-circled" (click)="closeTab(tab)"></i>
+          </ng-template>
+          <ng-template ngbTabContent>
+            <ngx-issue-details [ticketDetails]="tab"></ngx-issue-details>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
     </nb-card>
   </div>
 </div>
