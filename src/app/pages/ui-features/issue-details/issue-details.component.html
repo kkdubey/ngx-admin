@@ -1,14 +1,17 @@
-
-  <div class="row">
-    <div class="col-md-8">
-      <ngx-issue-info [issue_details]="ticketDetails"></ngx-issue-info>
-      <div class="row">
-        <div class="col-md-6"><ngx-frequent-issue></ngx-frequent-issue></div>
-        <div class="col-md-6"><ngx-recent-issue></ngx-recent-issue></div>
+<div class="row">
+  <div class="col-md-8">
+    <ngx-issue-info [jobId]="job.JobName" [ticketDetails]="ticketDetails"></ngx-issue-info>
+    <div class="row">
+      <div class="col-md-6">
+        <ngx-frequent-issue [jobId]="job.JobName"></ngx-frequent-issue>
+      </div>
+      <div class="col-md-6">
+        <ngx-recent-issue></ngx-recent-issue>
       </div>
     </div>
-    <div class="col-md-4">
-      <ngx-issue-probability></ngx-issue-probability>
-      <ngx-issue-probability></ngx-issue-probability>
-    </div>
   </div>
+  <div class="col-md-4">
+    <ngx-issue-probability></ngx-issue-probability>
+    <ngx-issue-probability></ngx-issue-probability>
+  </div>
+</div>

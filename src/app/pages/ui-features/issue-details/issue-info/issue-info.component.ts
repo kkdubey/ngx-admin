@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class IssueInfoComponent implements OnInit {
 
-  @Input() issue_details: any;
+  @Input() jobId: any;
+  @Input() ticketDetails: any = {};
   constructor() { }
 
   ngOnInit() {

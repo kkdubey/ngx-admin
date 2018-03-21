@@ -6,9 +6,18 @@
         <span>Issue Tracker</span>
       </div>
       <nb-card class="ticket-list">
-        <div *ngFor="let menu of menus" class="issue-div" (click)="openTab(menu)">
-          <i class="menu-icon nb-keypad"></i>
-          <span>{{menu.issue_type}}-{{menu.index}}</span>
+        <!-- <div *ngFor="let menu of menus" class="issue-div" (click)="openTab(menu)">
+            <i class="menu-icon nb-keypad"></i>
+            <span>{{menu.issue_type}}-{{menu.index}}</span>
+          </div> -->
+        <div infinite-scroll
+        [infiniteScrollDistance]="modalScrollDistance"
+        [infiniteScrollThrottle]="modalScrollThrottle"
+        [scrollWindow]="false" (scrolled)="onScrollDown()">
+          <div *ngFor="let job of jobs" class="issue-div" (click)="openTab(job)">
+            <i class="menu-icon nb-keypad"></i>
+            <span>{{job.JobName}}-{{job.IndexId}}</span>
+          </div>
         </div>
       </nb-card>
     </nb-card>
@@ -23,11 +32,11 @@
         </ngb-tab>
         <ngb-tab *ngFor="let tab of tabData">
           <ng-template ngbTabTitle>
-            <b id="{{tab.issue_type}}-{{tab.index}}">{{tab.issue_type}}-{{tab.index}}</b>
+            <b id="{{tab.JobName}}-{{tab.IndexId}}">{{tab.JobName}}-{{tab.IndexId}}</b>
             <i class="nb-close-circled" (click)="closeTab(tab)"></i>
           </ng-template>
           <ng-template ngbTabContent>
-            <ngx-issue-details [ticketDetails]="tab"></ngx-issue-details>
+            <ngx-issue-details [job]="tab"></ngx-issue-details>
           </ng-template>
         </ngb-tab>
       </ngb-tabset>

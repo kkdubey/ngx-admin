@@ -9,7 +9,7 @@
           <nb-card-header>
             Type:
           </nb-card-header>
-          <nb-card-body>{{issue_details.type}}
+          <nb-card-body>{{ticketDetails.type}}
           </nb-card-body>
         </nb-card>
       </div>
@@ -36,7 +36,7 @@
           <nb-card-header>
             Application
           </nb-card-header>
-          <nb-card-body>{{ issue_details.component }}
+          <nb-card-body>{{ ticketDetails.component }}
           </nb-card-body>
         </nb-card>
       </div>
@@ -63,7 +63,7 @@
           <nb-card-header>
             Created by:
           </nb-card-header>
-          <nb-card-body> {{createdBy}}
+          <nb-card-body> {{ticketDetails.assignee}}
           </nb-card-body>
         </nb-card>
       </div>
@@ -72,7 +72,7 @@
           <nb-card-header>
             Creation Date:
           </nb-card-header>
-          <nb-card-body> {{creationDate.getDate()}}/{{creationDate.getMonth()}}/{{creationDate.getYear()}}
+          <nb-card-body> {{creationDate}}/{{creationDate}}/{{creationDate}}
           </nb-card-body>
         </nb-card>
       </div>
@@ -81,7 +81,7 @@
           <nb-card-header>
             Effort:
           </nb-card-header>
-          <nb-card-body> {{effort}}
+          <nb-card-body> {{ticketDetails.effort}}
           </nb-card-body>
         </nb-card>
       </div>
@@ -90,7 +90,7 @@
           <nb-card-header>
             Region:
           </nb-card-header>
-          <nb-card-body> {{region}}
+          <nb-card-body> {{ticketDetails.region}}
           </nb-card-body>
         </nb-card>
       </div>
@@ -99,7 +99,7 @@
           <nb-card-header>
             Location affected:
           </nb-card-header>
-          <nb-card-body> {{locationAffected}}
+          <nb-card-body> {{ticketDetails.locationAffected}}
           </nb-card-body>
         </nb-card>
       </div>
@@ -108,7 +108,7 @@
           <nb-card-header>
             Description:
           </nb-card-header>
-          <nb-card-body> {{resolutionCommentary}}
+          <nb-card-body> {{ticketDetails.resolutionCommentary}}
           </nb-card-body>
         </nb-card>
       </div>

@@ -1,54 +1,19 @@
-
 <nb-card>
-    <nb-card-header>
-        Frequest Issue Info
-    </nb-card-header>
-    <nb-card-body>
-      <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label class="form-control-label">Place to show toast:</label>
-              <div class="dropdown" ngbDropdown>
-                <button class="btn btn-primary" type="button" ngbDropdownToggle>
-                  Test
-                </button>
-                <ul ngbDropdownMenu class="dropdown-menu">
-                  <li class="dropdown-item">
-                    Test1
-                  </li>
-                  <li class="dropdown-item">
-                    test2
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-control-label">Animation type:</label>
-              <div class="dropdown" ngbDropdown>
-                <button class="btn btn-primary" type="button" ngbDropdownToggle>
-                  Animation Type Test
-                </button>
-                <ul ngbDropdownMenu class="dropdown-menu">
-                  <li class="dropdown-item" >
-                    ddl1
-                  </li>
-                  <li class="dropdown-item" >
-                    ddl2
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-control-label">Title:</label>
-              <input class="form-control" [(ngModel)]="title" name="title">
-            </div>
-            <form>
-              <div class="form-group">
-                <label class="form-control-label">Content:</label>
-                <input class="form-control" [(ngModel)]="content" name="content">
-              </div>
-            </form>
-          </div>
-        </div>
-    </nb-card-body>
-  </nb-card>
+  <nb-card-header>
+    Frequest Issue Info
+  </nb-card-header>
+  <nb-card-body>
+    <table>
+      <thead>
+        <th>Resolution</th>
+        <th>Percentage</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let topResolutionsbyFrequency of topResolutionsbyFrequencies">
+          <td>{{topResolutionsbyFrequency.Resolution}}</td>
+          <td>{{topResolutionsbyFrequency.Percentage}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>

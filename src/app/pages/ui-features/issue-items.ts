@@ -18,6 +18,8 @@ export const ISSUE_ITEMS: any[] = [
     "summary": "jobarenafr16",
     "business_impact": "2 - Medium",
     "CreationDate": 1521193943344,
+    'FrequestIssueInfo': [{}],
+    
   }, {
     "index": 1,
     "assignee": "pchemp",

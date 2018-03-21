@@ -12,6 +12,7 @@ import { RecentIssueComponent } from './issue-details/recent-issue/recent-issue.
 import { FrequentIssueComponent } from './issue-details/frequent-issue/frequent-issue.component';
 import { IssueProbabilityComponent } from './issue-details/issue-probability/issue-probability.component';
 import { TicketDashboardComponent } from './ticket-dashboard/ticket-dashboard.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 const components = [
   UiFeaturesComponent,
@@ -22,6 +23,7 @@ const components = [
   RecentIssueComponent,
   FrequentIssueComponent,
   IssueProbabilityComponent,
+  TicketDashboardComponent,
 ];
 
 @NgModule({
@@ -29,13 +31,15 @@ const components = [
     ThemeModule,
     UiFeaturesRoutingModule,
     ButtonsModule,
+    InfiniteScrollModule,
   ],
   declarations: [
     ...components,
-    TicketDashboardComponent,
   ],
   entryComponents: [
     ModalComponent,
+  ],
+  providers: [
   ],
 })
 export class UiFeaturesModule { }
