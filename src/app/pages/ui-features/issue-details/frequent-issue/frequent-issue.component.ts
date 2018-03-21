@@ -17,7 +17,6 @@ export class FrequentIssueComponent implements OnInit {
     this.jobDataService.getTopResolutionsbyFrequency(this.jobId).subscribe(
       res => {
         this.topResolutionsbyFrequencies = res;
-        console.log(res);
       },
       error => console.log(error)
     );

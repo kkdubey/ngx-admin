@@ -16,7 +16,8 @@ export class IssueDetailsComponent implements OnInit {
 
     this.jobDataService.getIssueDetails(this.job.IndexId).subscribe(
       res => {
-        this.ticketDetails = res;
+        this.ticketDetails = res[0];
+        console.log(res);
       },
       error => console.log(error)
     );
