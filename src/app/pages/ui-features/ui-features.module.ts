@@ -13,6 +13,7 @@ import { FrequentIssueComponent } from './issue-details/frequent-issue/frequent-
 import { IssueProbabilityComponent } from './issue-details/issue-probability/issue-probability.component';
 import { TicketDashboardComponent } from './ticket-dashboard/ticket-dashboard.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ShortenDate } from './shorten-date.pipe';
 
 const components = [
   UiFeaturesComponent,
@@ -24,6 +25,7 @@ const components = [
   FrequentIssueComponent,
   IssueProbabilityComponent,
   TicketDashboardComponent,
+  ShortenDate,
 ];
 
 @NgModule({
@@ -32,6 +34,7 @@ const components = [
     UiFeaturesRoutingModule,
     ButtonsModule,
     InfiniteScrollModule,
+   
   ],
   declarations: [
     ...components,
