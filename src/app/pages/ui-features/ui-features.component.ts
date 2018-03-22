@@ -13,11 +13,15 @@ export class UiFeaturesComponent implements OnInit {
   jobs: any[] = [];
   tabData = [];
   indexFrom: number = 1;
-  indexTo: number = 20;
+  indexTo: number = 50;
 
   throttle = 300;
   scrollDistance = 1;
-  scrollUpDistance = 2;
+  regions = ['fr', 'hk', 'sg', 'uk', 'us'];
+  regionSelected = "";
+  applications = ['qrs ', 'arena'];
+  applicationSelected = "";
+  jobId = "";
 
   constructor(private elementRef: ElementRef,
     private jobDataService: JobDataService) { }
@@ -27,13 +31,13 @@ export class UiFeaturesComponent implements OnInit {
   }
 
   onScrollDown() {
-    this.indexFrom = this.indexFrom + 20;
-    this.indexTo = this.indexTo + 20;
+    this.indexFrom = this.indexFrom + 50;
+    this.indexTo = this.indexTo + 50;
     this.getNextIssue();
   }
 
   getNextIssue() {
-    this.jobDataService.getIssuesByRange(this.indexFrom, this.indexTo).subscribe(
+    this.jobDataService.getIssuesByRange(this.indexFrom, this.indexTo, this.applicationSelected, this.regionSelected, this.jobId).subscribe(
       res => {
         this.jobs = [...this.jobs, ...res];
         console.log(this.jobs);
@@ -41,6 +45,14 @@ export class UiFeaturesComponent implements OnInit {
       error => console.log(error)
     );
   }
+
+  filterJob() {
+    this.indexFrom = 1;
+    this.indexTo = 50;
+    this.jobs = [];
+    this.getNextIssue();
+  }
+
   openTab(tab) {
     const index = this.tabData.findIndex(function (e) { return e.IndexId == tab.IndexId; });
     if (index == -1) {
