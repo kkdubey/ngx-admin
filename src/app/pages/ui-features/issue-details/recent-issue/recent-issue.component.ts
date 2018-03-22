@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { JobDataService } from '../../../../@core/data/job-data.service';
 
 @Component({
   selector: 'ngx-recent-issue',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentIssueComponent implements OnInit {
 
-  constructor() { }
+  @Input() jobId: any;
+  topResolutionsbyTimes: any[] = [];
+  constructor(private jobDataService: JobDataService) { }
 
   ngOnInit() {
+    this.jobDataService.getTopResolutionsByTime(this.jobId).subscribe(
+      res => {
+        this.topResolutionsbyTimes = res;
+      },
+      error => console.log(error)
+    );
   }
 
 }

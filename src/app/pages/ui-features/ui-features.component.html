@@ -1,4 +1,36 @@
 <div class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+      <label class="form-control-label">Aplication:</label>
+      <select class='form-control' required [(ngModel)]='applicationSelected'>
+        <option value="" ng-reflect-value="">Select</option>
+        <option *ngFor='let application of applications' [value]="application">{{application | uppercase}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label class="form-control-label">Region:</label>
+      <select class='form-control' required [(ngModel)]='regionSelected'>
+        <option value="" ng-reflect-value="">Select</option>
+        <option *ngFor='let region of regions' [value]="region">{{region | uppercase}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label class="form-control-label">Job ID:</label>
+      <input class="form-control" [(ngModel)]="jobId" name="jobId">
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label class="form-control-label">Filter</label>
+      <button class="btn btn-hero-primary btn-demo form-control" (click)="filterJob()">Filter Ticket</button>
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-2 col-xs-2">
     <!-- <nb-menu [items]="menus" (click)="openTab($event)"></nb-menu> -->
     <nb-card>
@@ -6,14 +38,8 @@
         <span>Issue Tracker</span>
       </div>
       <nb-card class="ticket-list">
-        <!-- <div *ngFor="let menu of menus" class="issue-div" (click)="openTab(menu)">
-            <i class="menu-icon nb-keypad"></i>
-            <span>{{menu.issue_type}}-{{menu.index}}</span>
-          </div> -->
-        <div infinite-scroll
-        [infiniteScrollDistance]="modalScrollDistance"
-        [infiniteScrollThrottle]="modalScrollThrottle"
-        [scrollWindow]="false" (scrolled)="onScrollDown()">
+        <div infiniteScroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollThrottle]="throttle" [infiniteScrollContainer]="'.ticket-list'"
+          [fromRoot]="true" (scrolled)="onScrollDown()">
           <div *ngFor="let job of jobs" class="issue-div" (click)="openTab(job)">
             <i class="menu-icon nb-keypad"></i>
             <span>{{job.JobName}}-{{job.IndexId}}</span>
