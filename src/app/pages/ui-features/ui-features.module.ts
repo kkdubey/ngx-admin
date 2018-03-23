@@ -23,7 +23,7 @@ const components = [
   IssueProbabilityComponent,
   TicketDashboardComponent,
   ShortenDate,
-  PointInTimeResolutionsComponent
+  PointInTimeResolutionsComponent,
   PercentageShorten
 ];
 

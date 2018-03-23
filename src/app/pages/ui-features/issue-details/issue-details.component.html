@@ -11,7 +11,8 @@
     </div>
   </div>
   <div class="col-md-4">
-    <ngx-issue-probability></ngx-issue-probability>
-    <ngx-point-in-time-resolutions  [jobId]="job.IndexId"></ngx-point-in-time-resolutions>
+    <!-- <ngx-issue-probability></ngx-issue-probability> -->
+    <ngx-frequent-issue [jobId]="job.JobName"></ngx-frequent-issue>
+    <ngx-point-in-time-resolutions [jobId]="job.IndexId"></ngx-point-in-time-resolutions>
   </div>
 </div>
