@@ -3,17 +3,15 @@
     Frequest Issue Info
   </nb-card-header>
   <nb-card-body>
-    <table>
-      <thead>
-        <th>Resolution</th>
-        <th>Percentage</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let topResolutionsbyFrequency of topResolutionsbyFrequencies">
-          <td>{{topResolutionsbyFrequency.Resolution}}</td>
-          <td>{{topResolutionsbyFrequency.Percentage}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <nb-card *ngFor="let topResolutionsbyFrequency of topResolutionsbyFrequencies" class="card-css-override">
+      <nb-card-body>
+        <div class="row">
+          <span class="resolutions-frequency">
+            {{topResolutionsbyFrequency.Percentage}}%
+          </span>
+          <div class="col-sm-10">{{topResolutionsbyFrequency.Resolution}}</div>
+        </div>
+      </nb-card-body>
+    </nb-card>
   </nb-card-body>
 </nb-card>

@@ -24,9 +24,7 @@ export class JobDataService {
   }
 
   getIssuesByRange(fromIndex, toIndex, component, location, jobname): Observable<any> {
-    const url = this.base_url + `/GetIssuesbyrange?fromindex=${fromIndex}
-      &toindex=${toIndex}&component=${component}
-      &location=${location}&jobname=${location}`;
+    const url = this.base_url + `/GetIssuesbyrange?fromindex=${fromIndex}&toindex=${toIndex}&component=${component}&location=${location}&jobname=${location}`;
     return this.http.get(url, this.options).map(res => res.json());
   }
 
@@ -39,5 +37,10 @@ export class JobDataService {
     const url = this.base_url + `/GetTopResolutionsbyTime?job=${jobId}`;
     return this.http.get(url, this.options).map(res => res.json());
   }
-  
+
+  getPointInTimeResolutions(id): Observable<any> {
+    const url = this.base_url + `/GetPointinTimeResolutions?id=${id}`;
+    return this.http.get(url, this.options).map(res => res.json());
+  }
+
 }
