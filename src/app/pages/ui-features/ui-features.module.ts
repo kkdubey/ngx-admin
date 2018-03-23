@@ -14,6 +14,7 @@ import { IssueProbabilityComponent } from './issue-details/issue-probability/iss
 import { TicketDashboardComponent } from './ticket-dashboard/ticket-dashboard.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ShortenDate } from './shorten-date.pipe';
+import { PercentageShorten } from './percentage.pipe';
 
 const components = [
   UiFeaturesComponent,
@@ -26,6 +27,7 @@ const components = [
   IssueProbabilityComponent,
   TicketDashboardComponent,
   ShortenDate,
+  PercentageShorten
 ];
 
 @NgModule({

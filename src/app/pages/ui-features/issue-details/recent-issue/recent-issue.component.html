@@ -3,15 +3,15 @@
     Recent Issue Info
   </nb-card-header>
   <nb-card-body>
-    <table>
+    <table id="t01">
       <thead>
         <th>Resolution</th>
-        <th>Percentage</th>
+        <th>Date</th>
       </thead>
       <tbody>
         <tr *ngFor="let topResolutionsbyTime of topResolutionsbyTimes">
           <td>{{topResolutionsbyTime.Resolution}}</td>
-          <td>{{topResolutionsbyTime.Date}}</td>
+          <td>{{topResolutionsbyTime.Date | shorten}}</td>
         </tr>
       </tbody>
     </table>
