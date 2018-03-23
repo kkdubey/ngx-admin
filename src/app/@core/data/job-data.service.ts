@@ -38,4 +38,9 @@ export class JobDataService {
     return this.http.get(url, this.options).map(res => res.json());
   }
 
+  getPointInTimeResolutions(id): Observable<any> {
+    const url = this.base_url + `/GetPointinTimeResolutions?id=${id}`;
+    return this.http.get(url, this.options).map(res => res.json());
+  }
+
 }

@@ -11,6 +11,7 @@ import { IssueProbabilityComponent } from './issue-details/issue-probability/iss
 import { TicketDashboardComponent } from './ticket-dashboard/ticket-dashboard.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ShortenDate } from './shorten-date.pipe';
+import { PointInTimeResolutionsComponent } from './issue-details/point-in-time-resolutions/point-in-time-resolutions.component'
 
 const components = [
   UiFeaturesComponent,
@@ -21,6 +22,7 @@ const components = [
   IssueProbabilityComponent,
   TicketDashboardComponent,
   ShortenDate,
+  PointInTimeResolutionsComponent
 ];
 
 @NgModule({
