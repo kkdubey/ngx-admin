@@ -19,7 +19,7 @@ export class UiFeaturesComponent implements OnInit {
   scrollDistance = 1;
   regions = ['fr', 'hk', 'sg', 'uk', 'us'];
   regionSelected = "";
-  applications = ['qrs ', 'arena'];
+  applications = ['qrs', 'arena'];
   applicationSelected = "";
   jobId = "";
 
