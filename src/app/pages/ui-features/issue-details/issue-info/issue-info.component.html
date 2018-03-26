@@ -1,43 +1,44 @@
 <nb-card>
   <nb-card-body>
     <div class="row">
-        <div class="col-md-4 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Job Name
-              </nb-card-header>
-              <nb-card-body>{{ticketDetails.project_name}}
-              </nb-card-body>
-            </nb-card>
-        </div>
-              <div class="col-md-8 col-sm-12">
-                  <nb-card>
-                    <nb-card-header>
-                      Description:
-                    </nb-card-header>
-                    <nb-card-body> {{ticketDetails.description}}
-                    </nb-card-body>
-                  </nb-card>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <nb-card>
-                      <nb-card-header>
-                        Business impact:
-                      </nb-card-header>
-                      <nb-card-body>{{ticketDetails.business_impact}}
-                      </nb-card-body>
-                    </nb-card>
-                  </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Job Name
+          </nb-card-header>
+          <nb-card-body>{{ticketDetails.project_name}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      
+      <div class="col-md-8 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Description:
+          </nb-card-header>
+          <nb-card-body> {{ticketDetails.description}}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Business impact:
+          </nb-card-header>
+          <nb-card-body>{{ticketDetails.business_impact}}
+          </nb-card-body>
+        </nb-card>
+      </div>
 
-              <div class="col-md-4 col-sm-12">
-                  <nb-card>
-                    <nb-card-header>
-                      Application
-                    </nb-card-header>
-                    <nb-card-body>{{ ticketDetails.component }}
-                    </nb-card-body>
-                  </nb-card>
-                </div>
+      <div class="col-md-4 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Application
+          </nb-card-header>
+          <nb-card-body>{{ ticketDetails.component }}
+          </nb-card-body>
+        </nb-card>
+      </div>
 
       <div class="col-md-4 col-sm-12">
         <nb-card>
@@ -74,7 +75,7 @@
           <nb-card-header>
             Creation Date:
           </nb-card-header>
-          <nb-card-body> {{ticketDetails.CreationDate | shorten}}
+          <nb-card-body> {{ticketDetails.CreationDate}}
           </nb-card-body>
         </nb-card>
       </div>
@@ -108,9 +109,7 @@
           </nb-card-body>
         </nb-card>
       </div>
-      
+
     </div>
   </nb-card-body>
-  </nb-card>
-
- 
+</nb-card>
