@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { JobDataService } from '../../../../@core/data/job-data.service';
 
 @Component({
   selector: 'ngx-issue-probability',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IssueProbabilityComponent implements OnInit {
 
-  constructor() { }
+  @Input() jobId: any;
+  topResolutionsbyFrequencies: any[] = [];
+
+  constructor(private jobDataService: JobDataService) { }
 
   ngOnInit() {
+    this.jobDataService.getTopResolutionsbyFrequency(this.jobId).subscribe(
+      res => {
+        this.topResolutionsbyFrequencies = res;
+      },
+      error => console.log(error)
+    );
   }
 
 }

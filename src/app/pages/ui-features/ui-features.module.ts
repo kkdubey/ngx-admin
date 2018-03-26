@@ -13,6 +13,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ShortenDate } from './shorten-date.pipe';
 import { PointInTimeResolutionsComponent } from './issue-details/point-in-time-resolutions/point-in-time-resolutions.component'
 import { PercentageShorten } from './percentage.pipe';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 const components = [
   UiFeaturesComponent,
@@ -32,6 +33,7 @@ const components = [
     ThemeModule,
     UiFeaturesRoutingModule,
     InfiniteScrollModule,
+    Ng2SmartTableModule,
 
   ],
   declarations: [

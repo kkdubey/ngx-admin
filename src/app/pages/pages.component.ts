@@ -8,6 +8,7 @@ import { MENU_ITEMS } from './pages-menu';
     <router-outlet></router-outlet>
   </ngx-sample-layout>
 `,
+styleUrls: ['./page.component.scss'],
 })
 export class PagesComponent {
   menu = MENU_ITEMS;

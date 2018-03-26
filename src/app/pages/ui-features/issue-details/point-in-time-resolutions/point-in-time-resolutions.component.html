@@ -3,8 +3,11 @@
     Point in time resolutions
   </nb-card-header>
   <nb-card-body>
-    <nb-card *ngFor="let pointInTimeResolution of pointInTimeResolutions" class="card-css-override">
+    <!-- <nb-card *ngFor="let pointInTimeResolution of pointInTimeResolutions" class="card-css-override">
       <nb-card-body>{{pointInTimeResolution.Resolution}}</nb-card-body>
-    </nb-card>
+    </nb-card> -->
+    <ng2-smart-table [settings]="settings" [source]="source">
+    </ng2-smart-table>
   </nb-card-body>
 </nb-card>
+  
