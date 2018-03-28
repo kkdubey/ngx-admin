@@ -14,6 +14,7 @@ import { ShortenDate } from './shorten-date.pipe';
 import { PointInTimeResolutionsComponent } from './issue-details/point-in-time-resolutions/point-in-time-resolutions.component'
 import { PercentageShorten } from './percentage.pipe';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { CalculateAge } from './issue-age.pipe';
 
 const components = [
   UiFeaturesComponent,
@@ -25,7 +26,8 @@ const components = [
   TicketDashboardComponent,
   ShortenDate,
   PointInTimeResolutionsComponent,
-  PercentageShorten
+  PercentageShorten,
+  CalculateAge
 ];
 
 @NgModule({

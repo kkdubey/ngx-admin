@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-3">
     <div class="form-group">
-      <label class="form-control-label">Aplication:</label>
+      <label class="form-control-label">Application:</label>
       <select class='form-control' required [(ngModel)]='applicationSelected'>
         <option value="" ng-reflect-value="">Select</option>
         <option *ngFor='let application of applications' [value]="application">{{application | uppercase}}</option>
