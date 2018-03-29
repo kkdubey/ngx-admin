@@ -20,7 +20,8 @@ export class UiFeaturesComponent implements OnInit {
   applications = ['qrs', 'arena'];
   applicationSelected = "";
   jobId = "";
-  pollingStarted = false;
+  pollingStarted = true;
+  ticketDetails: any = {};
 
   constructor(private elementRef: ElementRef,
     private jobDataService: JobDataService) { }

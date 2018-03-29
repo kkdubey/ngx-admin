@@ -13,7 +13,6 @@ export class IssueDetailsComponent implements OnInit {
   constructor(private jobDataService: JobDataService) { }
 
   ngOnInit() {
-
     this.jobDataService.getIssueDetails(this.job.IndexId).subscribe(
       res => {
         this.ticketDetails = res[0];
