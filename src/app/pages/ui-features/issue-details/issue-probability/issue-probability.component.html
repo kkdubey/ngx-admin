@@ -15,14 +15,7 @@
                   </span>
                   <div class="col-sm-10">{{topResolution.Issue}}</div>
                 </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4>Resolutions</h4>
-                  </div>
-                  <div class="panel-body">
-                    <div *ngFor="let resolution of topResolution.Resolution| slice:0:2">{{resolution}}</div>
-                  </div>
-                </div>
+                <ngx-probability-resolution [resolutions]="topResolution.Resolution"></ngx-probability-resolution>
               </nb-card-body>
             </nb-card>
           </div>

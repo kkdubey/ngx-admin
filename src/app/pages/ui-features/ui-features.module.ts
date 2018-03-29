@@ -15,6 +15,7 @@ import { PointInTimeResolutionsComponent } from './issue-details/point-in-time-r
 import { PercentageShorten } from './percentage.pipe';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CalculateAge } from './issue-age.pipe';
+import { ProbabilityResolutionComponent } from './issue-details/issue-probability/probability-resolution/probability-resolution.component';
 
 const components = [
   UiFeaturesComponent,
@@ -27,7 +28,8 @@ const components = [
   ShortenDate,
   PointInTimeResolutionsComponent,
   PercentageShorten,
-  CalculateAge
+  CalculateAge,
+  ProbabilityResolutionComponent
 ];
 
 @NgModule({
