@@ -4,7 +4,23 @@
   cursor: pointer;
   border: 1px solid #ebeff5;
 }
+
 .ticket-list {
   height: 500px;
   overflow-y: scroll;
+}
+
+.wrap {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  z-index: 100;
+  top: 76px;
+}
+
+.wrap span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: max-content;
 }

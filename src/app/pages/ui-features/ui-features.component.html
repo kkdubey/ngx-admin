@@ -1,4 +1,17 @@
-<div class="row">
+<div class="wrap">
+  <span>
+    <a *ngIf="expand" (click)="OnExpand()">
+      <i class="ion-chevron-up"></i>
+    </a>
+    <a *ngIf="!expand" (click)="OnExpand()">
+      <i class="nb-search"></i>
+      <b>Search</b>
+    </a>
+  </span>
+</div>
+
+<div *ngIf="expand" class="row">
+
   <div class="col-md-3">
     <div class="form-group">
       <label class="form-control-label">Application:</label>
@@ -30,6 +43,7 @@
     </div>
   </div>
 </div>
+
 <div class="row">
   <div class="col-md-2 col-xs-2">
     <!-- <nb-menu [items]="menus" (click)="openTab($event)"></nb-menu> -->

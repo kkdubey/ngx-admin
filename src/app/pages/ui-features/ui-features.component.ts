@@ -23,6 +23,8 @@ export class UiFeaturesComponent implements OnInit {
   pollingStarted = true;
   ticketDetails: any = {};
 
+  expand: boolean = false;
+
   constructor(private elementRef: ElementRef,
     private jobDataService: JobDataService) { }
 
@@ -73,6 +75,10 @@ export class UiFeaturesComponent implements OnInit {
     return false;
   }
 
+
+  OnExpand() {
+    this.expand = !this.expand;
+  }
   private startPollingForJobs() {
     if (!this.pollingStarted) {
       this.pollingStarted = true;
