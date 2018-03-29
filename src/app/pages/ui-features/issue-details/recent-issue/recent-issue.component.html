@@ -2,20 +2,7 @@
   <nb-card-header>
     Recent Issue Info
   </nb-card-header>
-  <nb-card-body>
-    <!-- <table id="t01">
-      <thead>
-        <th>Resolution</th>
-        <th>Date</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let topResolutionsbyTime of topResolutionsbyTimes">
-          <td>{{topResolutionsbyTime.Resolution}}</td>
-          <td>{{topResolutionsbyTime.Date | shorten}}</td>
-        </tr>
-      </tbody>
-    </table> -->
-
+  <nb-card-body style="height: 300px;  padding:0px;">
     <ng2-smart-table [settings]="settings" [source]="source">
     </ng2-smart-table>
   </nb-card-body>

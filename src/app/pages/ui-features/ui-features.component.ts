@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { JobDataService } from '../../@core/data/job-data.service';
 
-import { ISSUE_ITEMS } from './issue-items';
 @Component({
   selector: 'ngx-ui-features',
   styleUrls: ['./ui-features.component.scss'],
@@ -9,7 +8,6 @@ import { ISSUE_ITEMS } from './issue-items';
 })
 export class UiFeaturesComponent implements OnInit {
 
-  menus = ISSUE_ITEMS;
   jobs: any[] = [];
   tabData = [];
   indexFrom: number = 1;
@@ -22,7 +20,11 @@ export class UiFeaturesComponent implements OnInit {
   applications = ['qrs', 'arena'];
   applicationSelected = "";
   jobId = "";
+<<<<<<< HEAD
   expand:boolean=false;
+=======
+  pollingStarted = false;
+>>>>>>> b5a4d1d92583f535f248d6c58fe07757ddcd8e66
 
   constructor(private elementRef: ElementRef,
     private jobDataService: JobDataService) { }
@@ -42,6 +44,7 @@ export class UiFeaturesComponent implements OnInit {
       res => {
         this.jobs = [...this.jobs, ...res];
         console.log(this.jobs);
+        this.startPollingForJobs();
       },
       error => console.log(error)
     );
@@ -73,10 +76,26 @@ export class UiFeaturesComponent implements OnInit {
     return false;
   }
 
+<<<<<<< HEAD
 
 
   OnExpand(){
     this.expand=!this.expand;
 
+=======
+  private startPollingForJobs() {
+    if (!this.pollingStarted) {
+      this.pollingStarted = true;
+      this.jobDataService.startPollingForGetIssuesByRange(12000)
+        .subscribe(
+          jobs => this.handleJobListViaPolling(jobs)
+        );
+    }
+  }
+  private handleJobListViaPolling(jobs: any[]) {
+    if (jobs && jobs.length > 0) {
+      this.jobs = jobs;
+    }
+>>>>>>> b5a4d1d92583f535f248d6c58fe07757ddcd8e66
   }
 }
