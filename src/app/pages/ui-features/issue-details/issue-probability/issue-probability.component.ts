@@ -9,17 +9,17 @@ import { JobDataService } from '../../../../@core/data/job-data.service';
 export class IssueProbabilityComponent implements OnInit {
 
   @Input() jobId: any;
-  topResolutionsbyFrequencies: any[] = [];
+  topResolutions: any[] = [];
 
   constructor(private jobDataService: JobDataService) { }
 
   ngOnInit() {
-    this.jobDataService.getTopResolutionsbyFrequency(this.jobId).subscribe(
+    this.jobDataService.getResolutions(this.jobId).subscribe(
       res => {
-        this.topResolutionsbyFrequencies = res;
+        this.topResolutions = res;
+        console.log(res);
       },
       error => console.log(error)
     );
   }
-
 }

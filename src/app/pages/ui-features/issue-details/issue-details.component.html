@@ -1,5 +1,10 @@
-<div class="row">
-  <ngx-issue-info class="issue-info" [jobId]="job.JobName" [ticketDetails]="ticketDetails"></ngx-issue-info>
+<div class="container">
+  <div class="row">
+    <ngx-issue-info class="issue-info" [jobId]="job.JobName" [ticketDetails]="ticketDetails"></ngx-issue-info>
+  </div>
+  <div class="clearfix"></div>
+  <ngx-issue-probability [jobId]="job.IndexId"></ngx-issue-probability>
+  <div class="clearfix"></div>
   <div class="col-md-8">
     <div class="row">
       <div class="col-md-6">
@@ -11,7 +16,6 @@
     </div>
   </div>
   <div class="col-md-4">
-    <ngx-issue-probability [jobId]="job.JobName"></ngx-issue-probability>
     <ngx-point-in-time-resolutions [jobId]="job.IndexId"></ngx-point-in-time-resolutions>
   </div>
 </div>

@@ -3,6 +3,8 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/switchMap';
 
 @Injectable()
 export class JobDataService {
@@ -43,4 +45,20 @@ export class JobDataService {
     return this.http.get(url, this.options).map(res => res.json());
   }
 
+  getResolutions(id): Observable<any> {
+    const url = this.base_url + `/GetResolutions?id=${id}`;
+    return this.http.get(url, this.options).map(res => res.json());
+  }
+
+  startPollingForGetIssuesByRange(refreshInterval: number): Observable<any[]> {
+    if (!refreshInterval) {
+      refreshInterval = 12000;
+    }
+    return Observable
+      .interval(refreshInterval)
+      .switchMap(
+        () => {
+          return this.getIssuesByRange(1, 50, null, null, null);
+        });
+  }
 }
