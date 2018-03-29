@@ -1,141 +1,135 @@
-<div>
-  <div class="row">
-    <div class="col-md-2 col-sm-12">
-      <nb-card>
-        <nb-card-header>
-          Job Name
-        </nb-card-header>
-        <nb-card-body>{{ticketDetails.project_name}}
-        </nb-card-body>
-      </nb-card>
-    </div>
-
-    <div class="col-md-4 col-sm-12">
-      <nb-card>
-        <nb-card-header>
-          Description:
-        </nb-card-header>
-        <nb-card-body> {{ticketDetails.description}}
-        </nb-card-body>
-      </nb-card>
-    </div>
-    <div class="col-md-3 col-sm-12">
-      <nb-card>
-        <nb-card-header>
-          Age:
-        </nb-card-header>
-        <nb-card-body> {{ticketDetails.CreationDate | issue_age}}
-        </nb-card-body>
-      </nb-card>
-    </div>
-    <div class="col-md-3 col-sm-12">
-      <nb-card>
-        <nb-card-header>
-          Business impact:
-        </nb-card-header>
-        <nb-card-body>{{ticketDetails.business_impact}}
-        </nb-card-body>
-      </nb-card>
-    </div>
+<div class="row">
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Job Name
+      </nb-card-header>
+      <nb-card-body>{{ticketDetails.project_name}}
+      </nb-card-body>
+    </nb-card>
   </div>
-  <div class="row">
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-      <ngb-panel title="Show">
-        <ng-template ngbPanelContent>
-          <div class="row">
-          <div class="col-md-2 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Application
-              </nb-card-header>
-              <nb-card-body>{{ ticketDetails.component }}
-              </nb-card-body>
-            </nb-card>
-          </div>
 
-          <div class="col-md-2 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Type:
-              </nb-card-header>
-              <nb-card-body>{{ticketDetails.issue_type}}
-              </nb-card-body>
-            </nb-card>
-          </div>
+  <div class="col-md-4 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Resolution:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.description}}
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Age:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.CreationDate | issue_age}}
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Business impact:
+      </nb-card-header>
+      <nb-card-body>{{ticketDetails.business_impact}}
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<span style="float:right">
+    <a *ngIf="expand" title="Show more" (click)="OnExpandview()">Hide <i class="ion-chevron-up"></i></a>
+    <a *ngIf="!expand" title="Show more" (click)="OnExpandview()">Show More <i class="ion-chevron-down"></i></a>
+</span>
+<div *ngIf="expand" class="row">
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Application
+      </nb-card-header>
+      <nb-card-body>{{ ticketDetails.component }}
+      </nb-card-body>
+    </nb-card>
+  </div>
 
-          <div class="col-md-2 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Priority:
-              </nb-card-header>
-              <nb-card-body>{{ticketDetails.priority}}
-              </nb-card-body>
-            </nb-card>
-          </div>
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Type:
+      </nb-card-header>
+      <nb-card-body>{{ticketDetails.issue_type}}
+      </nb-card-body>
+    </nb-card>
+  </div>
 
-          <div class="col-md-2 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Created by:
-              </nb-card-header>
-              <nb-card-body> {{ticketDetails.assignee}}
-              </nb-card-body>
-            </nb-card>
-          </div>
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Priority:
+      </nb-card-header>
+      <nb-card-body>{{ticketDetails.priority}}
+      </nb-card-body>
+    </nb-card>
+  </div>
 
-          <div class="col-md-3 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Creation Date:
-              </nb-card-header>
-              <nb-card-body> {{ticketDetails.CreationDate}}
-              </nb-card-body>
-            </nb-card>
-          </div>
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Created by:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.assignee}}
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div class="col-md-3 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Creation Date:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.CreationDate}}
+      </nb-card-body>
+    </nb-card>
+  </div>
 
 
 
-          <div class="col-md-2 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Effort:
-              </nb-card-header>
-              <nb-card-body> {{ticketDetails.original_estimate }}
-              </nb-card-body>
-            </nb-card>
-          </div>
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Effort:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.original_estimate }}
+      </nb-card-body>
+    </nb-card>
+  </div>
 
-          <div class="col-md-2 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Region:
-              </nb-card-header>
-              <nb-card-body> {{ticketDetails.label_1}}
-              </nb-card-body>
-            </nb-card>
-          </div>
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Region:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.label_1}}
+      </nb-card-body>
+    </nb-card>
+  </div>
 
-          <div class="col-md-2 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Location affected:
-              </nb-card-header>
-              <nb-card-body> {{ticketDetails.label_2}}
-              </nb-card-body>
-            </nb-card>
-          </div>
-          <div class="col-md-2 col-sm-12">
-            <nb-card>
-              <nb-card-header>
-                Status:
-              </nb-card-header>
-              <nb-card-body> {{ticketDetails.status}}
-              </nb-card-body>
-            </nb-card>
-          </div>
-        </div>
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Location affected:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.label_2}}
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-2 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Status:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.status}}
+      </nb-card-body>
+    </nb-card>
   </div>
 </div>

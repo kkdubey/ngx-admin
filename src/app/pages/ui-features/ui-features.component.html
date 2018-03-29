@@ -48,24 +48,22 @@
       </nb-card>
     </nb-card>
   </div>
-  <div class="col-md-10 col-xs-10">
-    <nb-card>
-      <ngb-tabset>
-        <ngb-tab title="Dashboard">
-          <ng-template ngbTabContent>
-            <ngx-ticket-dashboard></ngx-ticket-dashboard>
-          </ng-template>
-        </ngb-tab>
-        <ngb-tab *ngFor="let tab of tabData">
-          <ng-template ngbTabTitle>
-            <b id="{{tab.JobName}}-{{tab.IndexId}}">{{tab.JobName}}-{{tab.IndexId}}</b>
-            <i class="nb-close-circled" (click)="closeTab(tab)"></i>
-          </ng-template>
-          <ng-template ngbTabContent>
-            <ngx-issue-details [job]="tab"></ngx-issue-details>
-          </ng-template>
-        </ngb-tab>
-      </ngb-tabset>
-    </nb-card>
+  <div class="col-md-10 col-xs-10" style="background-color: #fff">
+    <ngb-tabset>
+      <ngb-tab title="Dashboard">
+        <ng-template ngbTabContent>
+          <ngx-ticket-dashboard></ngx-ticket-dashboard>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab *ngFor="let tab of tabData">
+        <ng-template ngbTabTitle>
+          <b id="{{tab.JobName}}-{{tab.IndexId}}">{{tab.JobName}}-{{tab.IndexId}}</b>
+          <i class="nb-close-circled" (click)="closeTab(tab)"></i>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <ngx-issue-details [job]="tab"></ngx-issue-details>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
   </div>
 </div>

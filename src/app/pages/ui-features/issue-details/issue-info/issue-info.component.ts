@@ -6,12 +6,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./issue-info.component.scss'],
 })
 export class IssueInfoComponent implements OnInit {
+   expand:boolean=false;
 
   @Input() jobId: any;
   @Input() ticketDetails: any = {};
   constructor() { }
 
   ngOnInit() {
+  }
+
+  OnExpandview(){
+    this.expand=!this.expand;
+
   }
 
 }
