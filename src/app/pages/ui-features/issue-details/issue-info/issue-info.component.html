@@ -8,6 +8,15 @@
       </nb-card-body>
     </nb-card>
   </div>
+  <div class="col-md-4 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Resolution:
+      </nb-card-header>
+      <nb-card-body > {{ticketDetails.description}}
+      </nb-card-body>
+    </nb-card>
+  </div>
   <div class="col-md-3 col-sm-12">
       <nb-card>
         <nb-card-header>
@@ -19,24 +28,16 @@
     </div>
 
   
-  <div class="col-md-2 col-sm-12">
-      <nb-card>
-        <nb-card-header>
-          Type:
-        </nb-card-header>
-        <nb-card-body>{{ticketDetails.issue_type}}
-        </nb-card-body>
-      </nb-card>
-    </div>
-    <div class="col-md-5 col-sm-12">
-        <nb-card>
-          <nb-card-header>
-            Resolution:
-          </nb-card-header>
-          <nb-card-body > {{ticketDetails.description}}
-          </nb-card-body>
-        </nb-card>
-      </div>
+    <div class="col-md-3 col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        Group Summary:
+      </nb-card-header>
+      <nb-card-body> {{ticketDetails.GroupSummary}}
+      </nb-card-body>
+    </nb-card>
+  </div>
+    
 </div>
 <span style="float:right">
     <a *ngIf="expand" title="Show more" (click)="OnExpandview()"><i class="ion-chevron-up"></i></a>
@@ -83,15 +84,7 @@
       </nb-card-body>
     </nb-card>
   </div>
-  <!-- <div class="col-md-3 col-sm-12">
-      <nb-card>
-        <nb-card-header>
-          Group Summary:
-        </nb-card-header>
-        <nb-card-body> {{ticketDetails.summary}}
-        </nb-card-body>
-      </nb-card>
-    </div> -->
+  
   <div class="col-md-2 col-sm-12">
     <nb-card>
       <nb-card-header>
