@@ -22,6 +22,7 @@ export class UiFeaturesComponent implements OnInit {
   applications = ['qrs', 'arena'];
   applicationSelected = "";
   jobId = "";
+  expand:boolean=false;
 
   constructor(private elementRef: ElementRef,
     private jobDataService: JobDataService) { }
@@ -70,5 +71,12 @@ export class UiFeaturesComponent implements OnInit {
       this.tabData.splice(index, 1);
     }
     return false;
+  }
+
+
+
+  OnExpand(){
+    this.expand=!this.expand;
+
   }
 }

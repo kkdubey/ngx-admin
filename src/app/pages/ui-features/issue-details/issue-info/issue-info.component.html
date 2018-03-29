@@ -1,48 +1,49 @@
-<div class="row">
+<div class="row ">
   <div class="col-md-2 col-sm-12">
     <nb-card>
       <nb-card-header>
-        Job Name
+        Job Name:
       </nb-card-header>
-      <nb-card-body>{{ticketDetails.project_name}}
+      <nb-card-body>{{ticketDetails.summary}}
       </nb-card-body>
     </nb-card>
   </div>
+  <div class="col-md-3 col-sm-12">
+      <nb-card>
+        <nb-card-header>
+          Age:
+        </nb-card-header>
+        <nb-card-body> {{ticketDetails.CreationDate | issue_age}}
+        </nb-card-body>
+      </nb-card>
+    </div>
 
-  <div class="col-md-4 col-sm-12">
-    <nb-card>
-      <nb-card-header>
-        Resolution:
-      </nb-card-header>
-      <nb-card-body> {{ticketDetails.description}}
-      </nb-card-body>
-    </nb-card>
-  </div>
-  <div class="col-md-3 col-sm-12">
-    <nb-card>
-      <nb-card-header>
-        Age:
-      </nb-card-header>
-      <nb-card-body> {{ticketDetails.CreationDate | issue_age}}
-      </nb-card-body>
-    </nb-card>
-  </div>
-  <div class="col-md-3 col-sm-12">
-    <nb-card>
-      <nb-card-header>
-        Business impact:
-      </nb-card-header>
-      <nb-card-body>{{ticketDetails.business_impact}}
-      </nb-card-body>
-    </nb-card>
-  </div>
+  
+  <div class="col-md-2 col-sm-12">
+      <nb-card>
+        <nb-card-header>
+          Type:
+        </nb-card-header>
+        <nb-card-body>{{ticketDetails.issue_type}}
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="col-md-5 col-sm-12">
+        <nb-card>
+          <nb-card-header>
+            Resolution:
+          </nb-card-header>
+          <nb-card-body > {{ticketDetails.description}}
+          </nb-card-body>
+        </nb-card>
+      </div>
 </div>
 <span style="float:right">
-    <a *ngIf="expand" title="Show more" (click)="OnExpandview()">Hide <i class="ion-chevron-up"></i></a>
-    <a *ngIf="!expand" title="Show more" (click)="OnExpandview()">Show More <i class="ion-chevron-down"></i></a>
+    <a *ngIf="expand" title="Show more" (click)="OnExpandview()"><i class="ion-chevron-up"></i></a>
+    <a *ngIf="!expand" title="Show more" (click)="OnExpandview()"><b>More Info </b><i class="ion-chevron-down"></i></a>
 </span>
-<div *ngIf="expand" class="row">
-  <div class="col-md-2 col-sm-12">
+<div *ngIf="expand" class="row same-size">
+  <div class="col-md-3 col-sm-12">
     <nb-card>
       <nb-card-header>
         Application
@@ -51,18 +52,19 @@
       </nb-card-body>
     </nb-card>
   </div>
+  <div class="col-md-3 col-sm-12">
+      <nb-card>
+        <nb-card-header>
+          Business impact:
+        </nb-card-header>
+        <nb-card-body>{{ticketDetails.business_impact}}
+        </nb-card-body>
+      </nb-card>
+    </div>
 
-  <div class="col-md-2 col-sm-12">
-    <nb-card>
-      <nb-card-header>
-        Type:
-      </nb-card-header>
-      <nb-card-body>{{ticketDetails.issue_type}}
-      </nb-card-body>
-    </nb-card>
-  </div>
+ 
 
-  <div class="col-md-2 col-sm-12">
+  <div class="col-md-3 col-sm-12">
     <nb-card>
       <nb-card-header>
         Priority:
@@ -72,7 +74,7 @@
     </nb-card>
   </div>
 
-  <div class="col-md-2 col-sm-12">
+  <div class="col-md-3 col-sm-12">
     <nb-card>
       <nb-card-header>
         Created by:
@@ -81,19 +83,15 @@
       </nb-card-body>
     </nb-card>
   </div>
-
-  <div class="col-md-3 col-sm-12">
-    <nb-card>
-      <nb-card-header>
-        Creation Date:
-      </nb-card-header>
-      <nb-card-body> {{ticketDetails.CreationDate}}
-      </nb-card-body>
-    </nb-card>
-  </div>
-
-
-
+  <!-- <div class="col-md-3 col-sm-12">
+      <nb-card>
+        <nb-card-header>
+          Group Summary:
+        </nb-card-header>
+        <nb-card-body> {{ticketDetails.summary}}
+        </nb-card-body>
+      </nb-card>
+    </div> -->
   <div class="col-md-2 col-sm-12">
     <nb-card>
       <nb-card-header>
@@ -114,7 +112,7 @@
     </nb-card>
   </div>
 
-  <div class="col-md-2 col-sm-12">
+  <div class="col-md-3 col-sm-12">
     <nb-card>
       <nb-card-header>
         Location affected:
@@ -123,6 +121,15 @@
       </nb-card-body>
     </nb-card>
   </div>
+  <div class="col-md-3 col-sm-12">
+      <nb-card>
+        <nb-card-header>
+          Creation Date:
+        </nb-card-header>
+        <nb-card-body> {{ticketDetails.CreationDate}}
+        </nb-card-body>
+      </nb-card>
+    </div>
   <div class="col-md-2 col-sm-12">
     <nb-card>
       <nb-card-header>
