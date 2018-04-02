@@ -50,20 +50,8 @@ export class JobDataService {
     return this.http.get(url, this.options).map(res => res.json());
   }
 
-  getlatestIssues(lastid): Observable<any> {
-    const url = this.base_url + `/GetlatestIssues?lastid=${lastid}`;
+  getlatestIssues(component, location, jobname, lastdate): Observable<any> {
+    const url = this.base_url + `/GetlatestIssues?component=${component}&location=${location}&jobname=${jobname}&lastdate=${lastdate}`;
     return this.http.get(url, this.options).map(res => res.json());
-  }
-
-  startPollingForLatestIssue(refreshInterval: number, lastid): Observable<any[]> {
-    if (!refreshInterval) {
-      refreshInterval = 12000;
-    }
-    return Observable
-      .interval(refreshInterval)
-      .switchMap(
-        () => {
-          return this.getlatestIssues(lastid);
-        });
   }
 }

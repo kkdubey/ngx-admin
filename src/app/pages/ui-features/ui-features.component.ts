@@ -14,7 +14,7 @@ export class UiFeaturesComponent implements OnInit {
 
   jobs: any[] = [];
   tabData = [];
-  indexFrom: number = 1;
+  indexFrom: number = 0;
   indexTo: number = 50;
 
   throttle = 300;
@@ -27,6 +27,7 @@ export class UiFeaturesComponent implements OnInit {
   pollingStarted = false;
   ticketDetails: any = {};
   latestId: 0;
+  latestDate: any;
 
   expand: boolean = false;
 
@@ -48,8 +49,11 @@ export class UiFeaturesComponent implements OnInit {
       res => {
         this.jobs = [...this.jobs, ...res];
         console.log(this.jobs);
-        if (this.indexFrom == 1) {
-          this.latestId = Math.max.apply(Math, this.jobs.map(function (o) { return o.IndexId; }));
+        if (this.indexFrom == 0) {
+          const latestDate = new Date(Math.max.apply(null, this.jobs.map(function (e) {
+            return new Date(e.CreationDate);
+          })));
+          this.latestDate = latestDate;
         }
         this.startPollingForJobs();
       },
@@ -58,7 +62,7 @@ export class UiFeaturesComponent implements OnInit {
   }
 
   filterJob() {
-    this.indexFrom = 1;
+    this.indexFrom = 0;
     this.indexTo = 50;
     this.jobs = [];
     this.getNextIssue();
@@ -104,30 +108,33 @@ export class UiFeaturesComponent implements OnInit {
   private startPollingForJobs() {
     if (!this.pollingStarted) {
       this.pollingStarted = true;
-      this.startPollingForLatestIssue(12000)
+      this.startPollingForLatestIssue(10000)
         .subscribe(
           jobs => this.handleJobListViaPolling(jobs)
         );
     }
   }
-  
+
   private handleJobListViaPolling(jobs: any[]) {
     if (jobs && jobs.length > 0) {
       jobs.forEach(function (obj) { obj.new = true; });
       this.jobs = jobs.concat(this.jobs)
-      this.latestId = Math.max.apply(Math, jobs.map(function (o) { return o.IndexId; }));
+      const latestDate = new Date(Math.max.apply(null, this.jobs.map(function (e) {
+        return new Date(e.CreationDate);
+      })));
+      this.latestDate = latestDate;
     }
   }
 
   private startPollingForLatestIssue(refreshInterval: number): Observable<any[]> {
     if (!refreshInterval) {
-      refreshInterval = 12000;
+      refreshInterval = 5000;
     }
     return Observable
       .interval(refreshInterval)
       .switchMap(
         () => {
-          return this.jobDataService.getlatestIssues(this.latestId);
+          return this.jobDataService.getlatestIssues(this.applicationSelected, this.regionSelected, this.jobId, this.latestDate.toLocaleString());
         });
   }
 }

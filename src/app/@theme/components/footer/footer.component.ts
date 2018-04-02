@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ngx-footer',
   styleUrls: ['./footer.component.scss'],
   template: `
-    <span class="created-by">Ticket UI <b></b></span>
+    <span  style="text-align:right;">&copy; Copyright 2018, Sapient Corporation. All rights reserved <b></b></span>
     
   `,
 })
