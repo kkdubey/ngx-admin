@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { JobDataService } from '../../@core/data/job-data.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'ngx-ui-features',
@@ -100,17 +104,30 @@ export class UiFeaturesComponent implements OnInit {
   private startPollingForJobs() {
     if (!this.pollingStarted) {
       this.pollingStarted = true;
-      this.jobDataService.startPollingForLatestIssue(12000, this.latestId)
+      this.startPollingForLatestIssue(12000)
         .subscribe(
           jobs => this.handleJobListViaPolling(jobs)
         );
     }
   }
+  
   private handleJobListViaPolling(jobs: any[]) {
     if (jobs && jobs.length > 0) {
-      jobs.forEach(function(obj) { obj.new = true; });
-      this.jobs =jobs.concat(this.jobs)
+      jobs.forEach(function (obj) { obj.new = true; });
+      this.jobs = jobs.concat(this.jobs)
       this.latestId = Math.max.apply(Math, jobs.map(function (o) { return o.IndexId; }));
     }
+  }
+
+  private startPollingForLatestIssue(refreshInterval: number): Observable<any[]> {
+    if (!refreshInterval) {
+      refreshInterval = 12000;
+    }
+    return Observable
+      .interval(refreshInterval)
+      .switchMap(
+        () => {
+          return this.jobDataService.getlatestIssues(this.latestId);
+        });
   }
 }

@@ -14,7 +14,11 @@
        
     }
     
-    nb-card-body.test:hover {
-        text-overflow: inherit;
-        overflow: visible;
+    .area-text-style {
+        height: 30px;
     }
+
+    // .area-text-style:hover {
+    //     height: max-content !important;
+    //     min-height: 30px;
+    // }
