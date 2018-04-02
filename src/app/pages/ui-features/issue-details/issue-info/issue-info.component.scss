@@ -5,8 +5,16 @@
     }
 
     nb-card-body {
-        padding: 0.3rem;
-        
-        
+        padding: 0.3rem;   
       }
 
+      nb-card-body.test {
+        white-space: nowrap; 
+        overflow: hidden; 
+       
+    }
+    
+    nb-card-body.test:hover {
+        text-overflow: inherit;
+        overflow: visible;
+    }

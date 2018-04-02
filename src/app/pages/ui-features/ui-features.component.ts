@@ -22,7 +22,7 @@ export class UiFeaturesComponent implements OnInit {
   jobId = "";
   pollingStarted = false;
   ticketDetails: any = {};
-  latestId: '';
+  latestId: 0;
 
   expand: boolean = false;
 
@@ -62,6 +62,7 @@ export class UiFeaturesComponent implements OnInit {
 
   openTab(tab) {
     tab.new = false;
+    tab.opened = true;
     const index = this.tabData.findIndex(function (e) { return e.IndexId == tab.IndexId; });
     if (index == -1) {
       this.jobDataService.getIssueDetails(tab.IndexId).subscribe(
@@ -86,6 +87,7 @@ export class UiFeaturesComponent implements OnInit {
   closeTab(tab) {
     const index = this.tabData.findIndex(function (e) { return e.IndexId == tab.IndexId; });
     if (index > -1) {
+      tab.opened = false;
       this.tabData.splice(index, 1);
     }
     return false;
@@ -98,7 +100,7 @@ export class UiFeaturesComponent implements OnInit {
   private startPollingForJobs() {
     if (!this.pollingStarted) {
       this.pollingStarted = true;
-      this.jobDataService.startPollingForLatestIssue(12000, 30004)
+      this.jobDataService.startPollingForLatestIssue(12000, this.latestId)
         .subscribe(
           jobs => this.handleJobListViaPolling(jobs)
         );
@@ -107,7 +109,7 @@ export class UiFeaturesComponent implements OnInit {
   private handleJobListViaPolling(jobs: any[]) {
     if (jobs && jobs.length > 0) {
       jobs.forEach(function(obj) { obj.new = true; });
-      this.jobs = [...jobs, this.jobs];
+      this.jobs =jobs.concat(this.jobs)
       this.latestId = Math.max.apply(Math, jobs.map(function (o) { return o.IndexId; }));
     }
   }
