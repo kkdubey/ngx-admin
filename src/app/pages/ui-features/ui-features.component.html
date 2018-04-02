@@ -54,7 +54,7 @@
       <nb-card class="ticket-list">
         <div infiniteScroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollThrottle]="throttle" [infiniteScrollContainer]="'.ticket-list'"
           [fromRoot]="true" (scrolled)="onScrollDown()">
-          <div *ngFor="let job of jobs" class="issue-div" (click)="openTab(job)">
+          <div *ngFor="let job of jobs" class="issue-div" (click)="openTab(job)" [ngClass]="{'new-item':job.new === true}">
             <i class="menu-icon nb-keypad"></i>
             <span>{{job.JobName}}-{{job.IndexId}}</span>
           </div>

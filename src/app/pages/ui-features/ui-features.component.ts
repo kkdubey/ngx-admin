@@ -20,8 +20,9 @@ export class UiFeaturesComponent implements OnInit {
   applications = ['qrs', 'arena'];
   applicationSelected = "";
   jobId = "";
-  pollingStarted = true;
+  pollingStarted = false;
   ticketDetails: any = {};
+  latestId: '';
 
   expand: boolean = false;
 
@@ -43,6 +44,9 @@ export class UiFeaturesComponent implements OnInit {
       res => {
         this.jobs = [...this.jobs, ...res];
         console.log(this.jobs);
+        if (this.indexFrom == 1) {
+          this.latestId = Math.max.apply(Math, this.jobs.map(function (o) { return o.IndexId; }));
+        }
         this.startPollingForJobs();
       },
       error => console.log(error)
@@ -57,16 +61,28 @@ export class UiFeaturesComponent implements OnInit {
   }
 
   openTab(tab) {
+    tab.new = false;
     const index = this.tabData.findIndex(function (e) { return e.IndexId == tab.IndexId; });
     if (index == -1) {
-      this.tabData.push(tab);
+      this.jobDataService.getIssueDetails(tab.IndexId).subscribe(
+        res => {
+          tab.ticketDetails = res[0];
+          this.tabData.push(tab);
+          this.focusTab(tab);
+        },
+        error => console.log(error)
+      );
+    } else {
+      this.focusTab(tab);
     }
+  }
+
+  private focusTab(tab) {
     setTimeout(() => {
       let elem = document.getElementById(tab.JobName + '-' + tab.IndexId);
       elem.click();
     }, 500);
   }
-
   closeTab(tab) {
     const index = this.tabData.findIndex(function (e) { return e.IndexId == tab.IndexId; });
     if (index > -1) {
@@ -75,14 +91,14 @@ export class UiFeaturesComponent implements OnInit {
     return false;
   }
 
-
   OnExpand() {
     this.expand = !this.expand;
   }
+
   private startPollingForJobs() {
     if (!this.pollingStarted) {
       this.pollingStarted = true;
-      this.jobDataService.startPollingForGetIssuesByRange(12000)
+      this.jobDataService.startPollingForLatestIssue(12000, 30004)
         .subscribe(
           jobs => this.handleJobListViaPolling(jobs)
         );
@@ -90,7 +106,9 @@ export class UiFeaturesComponent implements OnInit {
   }
   private handleJobListViaPolling(jobs: any[]) {
     if (jobs && jobs.length > 0) {
-      this.jobs = jobs;
+      jobs.forEach(function(obj) { obj.new = true; });
+      this.jobs = [...jobs, this.jobs];
+      this.latestId = Math.max.apply(Math, jobs.map(function (o) { return o.IndexId; }));
     }
   }
 }

@@ -26,7 +26,7 @@ export class JobDataService {
   }
 
   getIssuesByRange(fromIndex, toIndex, component, location, jobname): Observable<any> {
-    const url = this.base_url + `/GetIssuesbyrange?fromindex=${fromIndex}&toindex=${toIndex}&component=${component}&location=${location}&jobname=${location}`;
+    const url = this.base_url + `/GetIssuesbyrange?fromindex=${fromIndex}&toindex=${toIndex}&component=${component}&location=${location}&jobname=${jobname}`;
     return this.http.get(url, this.options).map(res => res.json());
   }
 
@@ -50,7 +50,12 @@ export class JobDataService {
     return this.http.get(url, this.options).map(res => res.json());
   }
 
-  startPollingForGetIssuesByRange(refreshInterval: number): Observable<any[]> {
+  getlatestIssues(lastid): Observable<any> {
+    const url = this.base_url + `/GetlatestIssues?lastid=${lastid}`;
+    return this.http.get(url, this.options).map(res => res.json());
+  }
+
+  startPollingForLatestIssue(refreshInterval: number, lastid): Observable<any[]> {
     if (!refreshInterval) {
       refreshInterval = 12000;
     }
@@ -58,7 +63,7 @@ export class JobDataService {
       .interval(refreshInterval)
       .switchMap(
         () => {
-          return this.getIssuesByRange(1, 50, null, null, null);
+          return this.getlatestIssues(lastid);
         });
   }
 }
